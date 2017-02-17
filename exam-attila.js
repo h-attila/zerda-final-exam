@@ -8,9 +8,13 @@ let spacer = '_';
 function stringJoiner (string, letter) {
   let result = '';
   for (i=0; i < 4; i++) {
-    result += string[i] + letter;
-  };
+    if (i < string.length-1) {
+      result += string[i] + letter;
+    } else {
+      result += string[i];
+    }
+  }
   return result;
 };
 
-console.log(stringJoiner(stringList, letter));
+console.log(stringJoiner(stringList, spacer));
