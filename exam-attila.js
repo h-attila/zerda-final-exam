@@ -5,16 +5,29 @@
 let stringList = ['alma', 'korte', 'barack', 'szilva'];
 let spacer = '_';
 
-function stringJoiner (string, letter) {
+// SOLUTION #1
+
+function stringJoiner (list, letter) {
   let result = '';
-  for (i=0; i < 4; i++) {
-    if (i < string.length-1) {
-      result += string[i] + letter;
+  for (i=0; i < list.length; i++) {
+    if (i < list.length-1) {
+      result += list[i] + letter;
     } else {
-      result += string[i];
+      result += list[i];
     }
   }
   return result;
 };
 
+// SOLUTION #2
+
+function stringJoiner_2 (list, letter) {
+  let result = '';
+  for (i=0; i < list.length-1; i++) {
+      result += list[i] + letter;
+    }
+  return result + list[list.length-1];
+};
+
 console.log(stringJoiner(stringList, spacer));
+console.log(stringJoiner_2(stringList, spacer));
